@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="{{htmlLang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The title and icon placeholders are filled from the lesson's lesson.json, the double-brace keys from
+     strings.json in the lesson's language (build_scripts/build.mjs) -->
+<title>__TITLE__</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>__ICON__</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- The lesson's colours and decorations (theme.css in the lesson folder), on top of the engine style -->
+<link rel="stylesheet" href="theme.css">
+</head>
+<!-- data-mode is filled from game.json: "assemble" (tiles), "aloud" (reading a word aloud) or "sentence" (reading
+     a sentence aloud); each mode hides the others' blocks, .only-mic is for both reading-aloud modes -->
+<body data-mode="__MODE__">
+<header>
+  <nav id="levels" class="levels" aria-label="{{levelsLabel}}"></nav>
+  <div id="score" class="score only-mic" title="{{scoreTitle}}" aria-live="polite"></div>
+</header>
+
+<main>
+  <section class="board">
+    <img id="picture" class="picture" alt="" hidden>
+    <div class="word-row not-sentence">
+      <div id="word" class="word" aria-label="{{wordLabel}}"></div>
+      <button id="say-word" class="speaker big only-assemble" title="{{sayWordTitle}}" aria-label="{{sayWordLabel}}"></button>
+    </div>
+    <p id="sentence" class="sentence only-sentence" aria-label="{{sentenceLabel}}"></p>
+    <p id="heard" class="heard only-mic" aria-live="polite"></p>
+  </section>
+
+  <button id="speak" class="mic only-mic" title="{{speakTitle}}">
+    <span aria-hidden="true">🎤</span><span id="speak-label">{{read}}</span>
+  </button>
+
+  <p id="message" role="status"></p>
+
+  <section id="reward" class="reward only-sentence" hidden aria-live="polite">
+    <p id="reward-text" class="reward-text"></p>
+    <button id="reward-play" class="speaker small" title="{{replayTitle}}" aria-label="{{replayTitle}}"></button>
+  </section>
+
+  <section class="controls">
+    <button id="erase" class="btn only-assemble" title="{{eraseTitle}}">{{erase}}</button>
+    <button id="check" class="btn primary only-assemble" title="{{checkTitle}}">{{check}}</button>
+    <button id="manual-ok" class="btn only-mic" hidden>{{manualOk}}</button>
+    <button id="next" class="btn">{{otherWord}}</button>
+  </section>
+
+  <section id="tiles" class="tiles only-assemble" aria-label="{{tilesLabel}}"></section>
+  <p id="note" class="note only-mic" hidden></p>
+</main>
+
+<div id="overlay" class="overlay" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
+    <div id="overlay-icon" class="card-icon"></div>
+    <h2 id="overlay-title"></h2>
+    <p id="overlay-text"></p>
+    <button id="overlay-btn" class="btn primary"></button>
+  </div>
+</div>
+
+<div id="confetti" class="confetti" aria-hidden="true"></div>
+<div class="grass" aria-hidden="true"></div>
+
+<!-- Classic scripts, not modules: this way the game also opens by double-click, without a server -->
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script src="__MODE__.js"></script>
+</body>
+</html>

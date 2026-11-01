@@ -1,0 +1,11 @@
+{
+  "title": "Загадки",
+  "description": "Слухаємо загадку і збираємо відгадку по складах.",
+  "subject": "Читання",
+  "icon": "🦉",
+  "order": 13,
+  "lang": "ua",
+  "uses": ["russian"],
+  "build": "(cd ../read-game/game && npm ci) && node ../read-game/game/build_scripts/build.mjs .",
+  "publish": "build"
+}

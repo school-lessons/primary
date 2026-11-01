@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="{{htmlLang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>{{icon}}</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<!-- The double-brace keys are filled by the build: title, icon and mode from the lesson, the rest from
+     strings.json in the lesson's language.
+     Set by the build: data-mode — game.json mode; data-code — its code file: speak (to-russian, to-english),
+     assemble or tenses (tenses-listen, tenses-say); data-mic — the answer is spoken. Elements marked only-<code>,
+     only-<mode> or only-mic are shown in those lessons only (style.css). -->
+<body data-mode="{{mode}}" data-code="{{code}}"{{mic}}>
+<header>
+  <nav id="topics" class="topics" aria-label="{{topicsLabel}}"></nav>
+  <div id="score" class="score" title="{{scoreTitle}}" aria-live="polite"></div>
+</header>
+
+<main>
+  <section class="board">
+    <div id="task" class="task"></div>
+    <div id="question" class="question"></div>
+    <div id="target" class="target only-tenses-say"></div>
+    <div id="line" class="line only-assemble" aria-label="{{phraseLabel}}"></div>
+    <div id="answer" class="answer" hidden></div>
+    <div id="clue" class="clue only-tenses"></div>
+    <div id="heard" class="heard only-mic" aria-live="polite"></div>
+  </section>
+
+  <section class="times only-tenses-listen" aria-label="{{whenLabel}}">
+    <button id="time-past" class="time time-past" title="{{past}} (1)">⏪<span>{{past}}</span></button>
+    <button id="time-now" class="time time-now" title="{{now}} (2)">🟢<span>{{now}}</span></button>
+    <button id="time-future" class="time time-future" title="{{future}} (3)">⏩<span>{{future}}</span></button>
+  </section>
+
+  <section id="bank" class="bank only-assemble" aria-label="{{wordsLabel}}"></section>
+
+  <section class="actions">
+    <button id="listen" class="round listen" title="{{listenTitle}}">
+      <span class="round-icon" aria-hidden="true">🔊</span><span class="round-label">{{listen}}</span>
+    </button>
+    <button id="speak" class="round speak only-mic" title="{{speakTitle}}">
+      <span class="round-icon" aria-hidden="true">🎤</span><span id="speak-label" class="round-label">{{say}}</span>
+    </button>
+    <button id="hint" class="round hint-btn" title="{{hintTitle}}">
+      <span class="round-icon" aria-hidden="true">💡</span><span class="round-label">{{hint}}</span>
+    </button>
+  </section>
+
+  <p id="message" role="status"></p>
+
+  <section class="controls">
+    <button id="manual-ok" class="btn only-mic" hidden>{{manualOk}}</button>
+    <button id="next" class="btn">{{otherPhrase}}</button>
+  </section>
+
+  <p id="note" class="note only-mic" hidden></p>
+</main>
+
+<div id="overlay" class="overlay" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
+    <div id="overlay-icon" class="card-icon"></div>
+    <h2 id="overlay-title"></h2>
+    <p id="overlay-text"></p>
+    <button id="overlay-btn" class="btn primary">{{next}}</button>
+  </div>
+</div>
+
+<div id="confetti" class="confetti" aria-hidden="true"></div>
+
+<!-- Classic scripts, not modules: this way the game also opens by double-click, without a server -->
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script src="{{code}}.js"></script>
+</body>
+</html>

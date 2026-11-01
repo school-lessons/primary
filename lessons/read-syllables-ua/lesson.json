@@ -1,0 +1,11 @@
+{
+  "title": "Збери слово",
+  "description": "Читаємо по складах: збираємо слова з казки «Три поросятка» й будуємо три будиночки.",
+  "subject": "Читання",
+  "icon": "🐷",
+  "order": 10,
+  "lang": "ua",
+  "uses": ["russian"],
+  "build": "(cd ../read-game/game && npm ci) && node ../read-game/game/build_scripts/build.mjs .",
+  "publish": "build"
+}

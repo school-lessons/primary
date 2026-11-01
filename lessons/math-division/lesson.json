@@ -1,0 +1,15 @@
+{
+  "title": "Деление",
+  "description": "Таблица умножения наоборот, 4 уровня — от деления на 1 до таблиц на 6–9. На каждый пример — 5 секунд.",
+  "subject": "Математика",
+  "icon": "➗",
+  "order": 23,
+  "build": "(cd ../math-drill/game && npm ci) && node ../math-drill/game/build_scripts/build.mjs .",
+  "publish": "build",
+  "ua": {
+    "title": "Ділення",
+    "description": "Таблиця множення навпаки, 4 рівні — від ділення на 1 до таблиць на 6–9. На кожен приклад — 5 секунд.",
+    "subject": "Математика",
+    "publish": "build-ua"
+  }
+}

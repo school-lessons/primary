@@ -1,0 +1,15 @@
+{
+  "title": "Дроби вперемешку",
+  "description": "Сложение, вычитание, умножение и деление дробей в одном раунде. 2 уровня, на каждый пример — 10 секунд.",
+  "subject": "Дроби",
+  "icon": "🎲",
+  "order": 34,
+  "build": "(cd ../math-drill/game && npm ci) && node ../math-drill/game/build_scripts/build.mjs .",
+  "publish": "build",
+  "ua": {
+    "title": "Дроби впереміш",
+    "description": "Додавання, віднімання, множення й ділення дробів в одному раунді. 2 рівні, на кожен приклад — 10 секунд.",
+    "subject": "Дроби",
+    "publish": "build-ua"
+  }
+}

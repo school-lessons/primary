@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Весёлая школа</title>
+<meta name="description" content="Учебные игры и тренажёры для детей: чтение, счёт и не только.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎒</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<!-- The site root: pick a language. Each language has its own lesson list and lessons in its folder: ru/, ua/. -->
+<style>
+  :root {
+    --ink: #3d2b2f;
+    --muted: #8b7576;
+    --sky: #d7f0ff;
+    --cream: #fff8ec;
+    --card: #ffffff;
+    --card-border: #eadfcd;
+    --accent: #ff7096;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--sky) 0%, var(--cream) 50%) fixed;
+    color: var(--ink);
+    font-family: "Nunito", system-ui, sans-serif;
+    font-weight: 600;
+  }
+
+  main {
+    max-width: 760px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 40px 16px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header { text-align: center; margin-bottom: 36px; }
+  h1 { font-size: clamp(36px, 7vw, 56px); font-weight: 900; margin: 0; letter-spacing: -0.5px; }
+  .lead { color: var(--muted); font-size: 20px; margin: 8px 0 0; }
+
+  .languages { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 28px 16px 24px;
+    background: var(--card);
+    border: 4px solid var(--card-border);
+    border-radius: 28px;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 6px 0 var(--card-border);
+    transition: transform 0.12s, border-color 0.12s, box-shadow 0.12s;
+  }
+  a.language:hover, a.language:focus-visible { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 10px 0 var(--accent); outline: none; }
+  a.language:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--accent); }
+
+  /* A letter only this alphabet has, instead of a flag */
+  .language-letter {
+    display: grid;
+    place-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    background: var(--sky);
+    font-size: 84px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .language-text { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .language-name { font-size: 30px; font-weight: 900; }
+  .language-note { color: var(--muted); font-size: 17px; }
+
+  @media (max-width: 700px) {
+    main { padding-top: 28px; }
+    .languages { grid-template-columns: 1fr; gap: 16px; }
+    .language { flex-direction: row; justify-content: flex-start; padding: 16px 20px; gap: 20px; }
+    .language-letter { width: 84px; height: 84px; font-size: 58px; border-radius: 18px; }
+    .language-text { align-items: flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .language { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>🎒 Весёлая школа</h1>
+    <p class="lead">Выбери язык · Обери мову</p>
+  </header>
+  <div class="languages">
+    <a class="language" href="ru/" lang="ru">
+      <span class="language-letter" aria-hidden="true">Ы</span>
+      <span class="language-text">
+        <span class="language-name">Русский</span>
+        <span class="language-note">Учебные игры</span>
+      </span>
+    </a>
+    <a class="language" href="ua/" lang="uk">
+      <span class="language-letter" aria-hidden="true">Ї</span>
+      <span class="language-text">
+        <span class="language-name">Українська</span>
+        <span class="language-note">Навчальні ігри</span>
+      </span>
+    </a>
+  </div>
+</main>
+</body>
+</html>

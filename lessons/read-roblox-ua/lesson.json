@@ -1,0 +1,10 @@
+{
+  "title": "Секрети Роблокса",
+  "description": "Читаємо вголос короткі фрази про Роблокс — браузер слухає, а в нагороду розповідає секрет, пораду чи загадку.",
+  "subject": "Читання",
+  "icon": "🎮",
+  "order": 14,
+  "lang": "ua",
+  "build": "(cd ../read-game/game && npm ci) && node ../read-game/game/build_scripts/build.mjs .",
+  "publish": "build"
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Прочитай вслух",
+  "description": "Читаем вслух слова из «Гарри Поттера», разбитые на слоги, — без картинки и подсказки: браузер слушает и ставит звёздочку.",
+  "subject": "Чтение",
+  "icon": "🎤",
+  "order": 12,
+  "build": "(cd ../read-game/game && npm ci) && node ../read-game/game/build_scripts/build.mjs .",
+  "publish": "build"
+}

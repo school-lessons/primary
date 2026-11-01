@@ -1,0 +1,11 @@
+{
+  "title": "Чарівні слова",
+  "description": "Читаємо по складах: збираємо слова з «Гаррі Поттера» й добираємося до Гоґвортсу.",
+  "subject": "Читання",
+  "icon": "🪄",
+  "order": 11,
+  "lang": "ua",
+  "uses": ["russian", "potter"],
+  "build": "(cd ../read-game/game && npm ci) && node ../read-game/game/build_scripts/build.mjs .",
+  "publish": "build"
+}

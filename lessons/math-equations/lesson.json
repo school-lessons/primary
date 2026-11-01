@@ -1,0 +1,15 @@
+{
+  "title": "Уравнения",
+  "description": "Найди x: x + 4 = 7, 3 × x = 12 — все четыре действия вперемешку. 4 уровня, 20 примеров, на каждый — 5 секунд.",
+  "subject": "Математика",
+  "icon": "🔎",
+  "order": 26,
+  "build": "(cd ../math-drill/game && npm ci) && node ../math-drill/game/build_scripts/build.mjs .",
+  "publish": "build",
+  "ua": {
+    "title": "Рівняння",
+    "description": "Знайди x: x + 4 = 7, 3 × x = 12 — усі чотири дії впереміш. 4 рівні, 20 прикладів, на кожен — 5 секунд.",
+    "subject": "Математика",
+    "publish": "build-ua"
+  }
+}

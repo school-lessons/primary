@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{htmlLang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The title and icon placeholders are filled from lesson.json, the double-brace keys from strings.json in the
+     build's language (build_scripts/build.mjs) -->
+<title>__TITLE__</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>__ICON__</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav id="topics" class="topics" aria-label="{{topicsLabel}}"></nav>
+  <div id="score" class="score" title="{{scoreTitle}}" aria-live="polite"></div>
+</header>
+
+<main>
+  <button id="listen" class="listen" title="{{listenTitle}}">
+    <span class="listen-icon" aria-hidden="true">🔊</span><span>{{listen}}</span>
+  </button>
+
+  <!-- data-no-data: shown by main.js when data.js is missing -->
+  <p id="message" role="status" data-no-data="{{noData}}"></p>
+
+  <section id="cards" class="cards" aria-label="{{cardsLabel}}"></section>
+</main>
+
+<div id="overlay" class="overlay" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
+    <div id="overlay-icon" class="card-icon"></div>
+    <h2 id="overlay-title"></h2>
+    <p id="overlay-text"></p>
+    <button id="overlay-btn" class="btn"></button>
+  </div>
+</div>
+
+<div id="confetti" class="confetti" aria-hidden="true"></div>
+
+<!-- Classic scripts, not modules: this way the game also opens by double-click, without a server -->
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

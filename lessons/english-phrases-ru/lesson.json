@@ -1,0 +1,16 @@
+{
+  "title": "Переведи на русский",
+  "description": "300 популярных английских фраз: слушаем фразу и говорим её по-русски — браузер проверяет. Не знаешь — есть подсказка.",
+  "subject": "Английский",
+  "icon": "🎧",
+  "order": 220,
+  "uses": ["english-phrases"],
+  "build": "(cd ../english-phrases/game && npm ci) && node ../english-phrases/game/build_scripts/build.mjs .",
+  "publish": "build",
+  "ua": {
+    "title": "Переклади українською",
+    "description": "300 популярних англійських фраз: слухаємо фразу й кажемо її українською — браузер перевіряє. Не знаєш — є підказка.",
+    "subject": "Англійська",
+    "publish": "build-ua"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Прочитай вголос",
+  "description": "Читаємо вголос слова з «Гаррі Поттера», розбиті на склади, — без картинки й підказки: браузер слухає і ставить зірочку.",
+  "subject": "Читання",
+  "icon": "🎤",
+  "order": 12,
+  "lang": "ua",
+  "build": "(cd ../read-game/game && npm ci) && node ../read-game/game/build_scripts/build.mjs .",
+  "publish": "build"
+}
